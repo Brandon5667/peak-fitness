@@ -1,0 +1,4 @@
+html based on framework
+fetch APIs (weather and trails)
+function to append html with list of trails
+function to format and append current weather to DOM
