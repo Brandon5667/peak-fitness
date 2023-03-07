@@ -1,0 +1,85 @@
+/* CSS for Peak Fitness website */
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #963333;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    flex-basis: 25%;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 36px;
+    flex-basis: 50%;
+}
+
+/* Form styles */
+form#city-search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    text-align: center;
+    flex-basis: 50%;
+}
+
+form#city-search label {
+    font-size: 20px;
+    flex-basis: 30%;
+}
+
+form#city-search input[type="text"] {
+    padding: 5px;
+    font-size: 20px;
+    flex-basis: 60%;
+}
+
+form#city-search input[type="submit"] {
+    padding: 5px 20px;
+    font-size: 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/* Article styles */
+article {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin: 20px;
+    padding: 20px;
+    background-color: #c4c4c4;
+    border-radius: 10px;
+    flex-basis: 75%;
+}
+
+#list-of-trails {
+    list-style: none;
+    padding-left: 0;
+    font-size: 20px;
+    margin: 0;
+    font-weight: bold;
+}
+
+#current-weather {
+    font-size: 20px;
+}
