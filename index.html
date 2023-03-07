@@ -1,7 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Peak Fitness</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peak Fitness</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" integrity="sha512-HqxHUkJM0SYcbvxUw5P60SzdOTy/QVwA1JJrvaXJv4q7lmbDZCmZaqz01UPOaQveoxfYRv1tHozWGPMcuTBuvQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link rel="stylesheet" type="text/css" href="./assets/style.css">
 </head>
 <body>
@@ -9,17 +13,15 @@
         <h1>
             Peak Fitness
         </h1>
+        <form id="city-search" >
+            <label for="search">Enter Your City:</label>
+            <input type="text" id="location-field"/> <br>
+            <input type="submit" id="submit-btn"/> 
+        </form>
     </header>
-	<form id="city-search" >
-        <label for="search">Enter Your City:</label>
-        <input type="text" id="location-field"/> <br>
-        <input type="submit" id="submit-btn"/> 
-    </form>
+
 	<article>
         <ul id="list-of-trails">List of Local Hiking Trails</ul>
-    </article>
-	
-    <article>
         <h2>Today's Weather</h2>
         <div id="current-weather"></div>
     </article>
