@@ -13,10 +13,12 @@ body {
 
 /* Header styles */
 header {
+    background-image: url("images/mntns.jpg");
+    background-color: #414141;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
+    
     color: #fff;
     padding: 20px;
     text-align: center;
