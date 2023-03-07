@@ -1,5 +1,8 @@
-var getWeather = function(city, state) {
-    var openWeatherUrl = 'https://api.openweathermap.org/data/2.5/weather?q='+ city +','+ state +' &appid=263899f28c1a4fdfb9c42daf32e3c285';
+
+var city = $("#location-field");
+
+var getWeather = function(city) {
+    var openWeatherUrl = 'https://api.openweathermap.org/data/2.5/weather?q='+ city + '&appid=263899f28c1a4fdfb9c42daf32e3c285';
     console.log('get current weather');
     fetch(openWeatherUrl)
         .then (function(response){
@@ -10,6 +13,12 @@ var getWeather = function(city, state) {
             console.log('Weather', data);
         })
 };
+
+var buttonEl = $("#submit-btn");
+buttonEl.on("click", function(event){
+    event.preventDefault();
+    getWeather(city.val())
+});
 
 
 
