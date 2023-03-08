@@ -1,5 +1,5 @@
 
-var city = $("#location-field");
+var city = $("#city-search");
 
 var getWeather = function(city) {
     var openWeatherUrl = 'https://api.openweathermap.org/data/2.5/weather?q='+ city + '&appid=263899f28c1a4fdfb9c42daf32e3c285';
@@ -24,6 +24,24 @@ buttonEl.on("click", function(event){
 
 
 
+// const settings = {
+// 	"async": true,
+// 	"crossDomain": true,
+// 	"url": "https://trailapi-trailapi.p.rapidapi.com/trails/%7Bid%7D/maps/",
+// 	"method": "GET",
+// 	"headers": {
+// 		"X-RapidAPI-Key": "3f7720283amsh832fcd99762aa5ep13ac18jsn2a3f879a1146",
+// 		"X-RapidAPI-Host": "trailapi-trailapi.p.rapidapi.com"
+// 	}
+// };
+
+// $.ajax(settings).done(function (response) {
+// 	console.log(response);
+// });
+
+
+
+
 // const options = {
 // 	method: 'GET',
 // 	headers: {
@@ -36,3 +54,16 @@ buttonEl.on("click", function(event){
 // 	.then(response => response.json())
 // 	.then(response => console.log(response))
 // 	.catch(err => console.error(err));
+
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '3f7720283amsh832fcd99762aa5ep13ac18jsn2a3f879a1146',
+		'X-RapidAPI-Host': 'trailapi-trailapi.p.rapidapi.com'
+	}
+};
+
+fetch('https://trailapi-trailapi.p.rapidapi.com/trails/explore/?lat=33.749&lon=-84.388', options)
+	.then(response => response.json())
+	.then(response => console.log(response))
+	.catch(err => console.error(err));
