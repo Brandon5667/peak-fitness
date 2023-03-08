@@ -21,40 +21,6 @@ buttonEl.on("click", function(event){
 });
 
 
-
-
-
-// const settings = {
-// 	"async": true,
-// 	"crossDomain": true,
-// 	"url": "https://trailapi-trailapi.p.rapidapi.com/trails/%7Bid%7D/maps/",
-// 	"method": "GET",
-// 	"headers": {
-// 		"X-RapidAPI-Key": "3f7720283amsh832fcd99762aa5ep13ac18jsn2a3f879a1146",
-// 		"X-RapidAPI-Host": "trailapi-trailapi.p.rapidapi.com"
-// 	}
-// };
-
-// $.ajax(settings).done(function (response) {
-// 	console.log(response);
-// });
-
-
-
-
-// const options = {
-// 	method: 'GET',
-// 	headers: {
-// 		'X-RapidAPI-Key': '3f7720283amsh832fcd99762aa5ep13ac18jsn2a3f879a1146',
-// 		'X-RapidAPI-Host': 'trailapi-trailapi.p.rapidapi.com'
-// 	}
-// };
-
-// fetch('https://trailapi-trailapi.p.rapidapi.com/trails/%7Bid%7D/maps/', options)
-// 	.then(response => response.json())
-// 	.then(response => console.log(response))
-// 	.catch(err => console.error(err));
-
 const options = {
 	method: 'GET',
 	headers: {
@@ -63,7 +29,7 @@ const options = {
 	}
 };
 
-fetch('https://trailapi-trailapi.p.rapidapi.com/trails/explore/?lat=33.749&lon=-84.388', options)
+fetch('https://trailapi-trailapi.p.rapidapi.com/activity/?lat=33.749&limit=10&lon=-84.388&radius=25&q-activities_activity_type_name_eq=hiking', options)
 	.then(response => response.json())
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
