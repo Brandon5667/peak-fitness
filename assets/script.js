@@ -2,8 +2,10 @@ var city = $("#city-search");
 var state = $("#state-search");
 console.log(city);
 
+
 var getWeather = function(city, state) {
     var openWeatherUrl = 'https://api.openweathermap.org/data/2.5/weather?q='+ city.val() + ','+ state.val() + ',USA&appid=263899f28c1a4fdfb9c42daf32e3c285';
+
     console.log('get current weather');
     fetch(openWeatherUrl)
         .then (function(response){
