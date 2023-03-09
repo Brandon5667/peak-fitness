@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- added cdn for css framework bulma, changed title to "Peak Fitness", and linked stylesheet -->
     <title>Peak Fitness</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" integrity="sha512-HqxHUkJM0SYcbvxUw5P60SzdOTy/QVwA1JJrvaXJv4q7lmbDZCmZaqz01UPOaQveoxfYRv1tHozWGPMcuTBuvQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link rel="stylesheet" type="text/css" href="./assets/style.css">
 </head>
 <body>
     <header>
+        <!-- created header for web banner and coded in form element to retrieve city 
+        and created state drop down selector to input state. button created for user input. -->
         <h1>
             Peak Fitness
         </h1>
@@ -25,12 +28,13 @@
             <button class="button is-small" id="submit-btn">SUBMIT</button>
         </form>
     </header>
-
+    <!-- container for trail list element created and container for current weather container -->
 	<article>
         <ul id="list-of-trails">List of Local Hiking Trails</ul>
         <h2>Today's Weather</h2>
         <div id="current-weather"></div>
     </article>
+    <!-- added jquery cdn and script tag -->
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
     <script src="./assets/script.js"></script>
 
