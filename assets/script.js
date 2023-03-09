@@ -1,8 +1,9 @@
+// Variables for Weather API
 var city = $("#city-search");
 var state = $("#state-search");
 console.log(city);
 
-
+// Weather API Function, Pulls Weather, and Longitude/Latitude Coordinates for the City and State Entered
 var getWeather = function(city, state) {
     var openWeatherUrl = 'https://api.openweathermap.org/data/2.5/weather?q='+ city.val() + ','+ state.val() + ',USA&appid=263899f28c1a4fdfb9c42daf32e3c285';
 
@@ -14,10 +15,12 @@ var getWeather = function(city, state) {
         })
         .then (function(data){
             console.log('Weather', data);
+// Variables lat / lon pull Longitude and Latitude from the Weather API data set
             var lat = data.coord.lat;
             var lon = data.coord.lon;
             console.log(lat);
             console.log(lon);
+// Trail API uses the lat / lon variables to pull nearby Hiking Trails and their information
             const options = {
                 method: 'GET',
                 headers: {
@@ -33,7 +36,7 @@ var getWeather = function(city, state) {
             
         })
 };
-
+// Event Listner for Submit Button, to pull city and state from Input field to start all associated Functions
 var buttonEl = $("#submit-btn");
 buttonEl.on("click", function(event){
     event.preventDefault();
