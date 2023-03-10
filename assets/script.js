@@ -34,7 +34,7 @@ var getWeather = function(city, state) {
 
 var currentWeatherDiv = document.getElementById("current-weather");
 
-var weatherHTML = "<p> Todays Weather is, " +weatherDescription+ "</p><br><img src='http://openweathermap.org/img/w/" + weatherIcon + ".png'><br><p>Humidity: " + currentHumidity + "</p><br><p>Temperature today <br>Low " + tempMin + "<br> High " + tempMax + "</p><br><p>Wind Speed: " + windSpeed + "</p>"
+var weatherHTML = "<p> Todays Weather<br> " +weatherDescription+ "</p><br><img src='http://openweathermap.org/img/w/" + weatherIcon + ".png'><br><p>Humidity: " + currentHumidity + "</p><br><p>Temperature today <br>Low " + tempMin + "<br> High " + tempMax + "</p><br><p>Wind Speed: " + windSpeed + "</p>"
 currentWeatherDiv.innerHTML = weatherHTML;
 
 
