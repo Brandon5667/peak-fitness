@@ -31,6 +31,15 @@ var getWeather = function(city, state) {
 
             var windSpeed = data.wind.speed;
             console.log('Wind Speed',windSpeed);
+
+var currentWeatherDiv = document.getElementById("current-weather");
+
+var weatherHTML = "<p> Todays Weather is, " +weatherDescription+ "</p><br><img src='http://openweathermap.org/img/w/" + weatherIcon + ".png'><br><p>Humidity: " + currentHumidity + "</p><br><p>Temperature: " + tempMin + " - " + tempMax + "</p><br><p>Wind Speed: " + windSpeed + "</p>"
+currentWeatherDiv.innerHTML = weatherHTML;
+
+
+
+
 // Variables lat / lon pull Longitude and Latitude from the Weather API data set
             var lat = data.coord.lat;
             var lon = data.coord.lon;
