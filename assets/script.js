@@ -34,32 +34,38 @@ var getWeather = function(city, state) {
 // Variables lat / lon pull Longitude and Latitude from the Weather API data set
             var lat = data.coord.lat;
             var lon = data.coord.lon;
-            console.log(lat);
-            console.log(lon);  
-        .then (function()){
-            fetch(getTrailUrl)
-        }
-                
+            console.log("lat",lat);
+            console.log("long",lon);  
+            return {
+                lat: lat,
+                lon: lon,
+            };
+        })
+        .then( function(coordinates){
+            const trails = trailApiCall(coordinates);
+            return trails;
         })
 };
 // Trail API uses the lat / lon variables to pull nearby Hiking Trails and their information
 
-
-
-
-var options = {
-    method: 'GET',
-    headers: {
-        'X-RapidAPI-Key': '3f7720283amsh832fcd99762aa5ep13ac18jsn2a3f879a1146',
-        'X-RapidAPI-Host': 'trailapi-trailapi.p.rapidapi.com'
-    }
-};
-var trailApiCall = function(){
-        var getTrailUrl = 'https://trailapi-trailapi.p.rapidapi.com/activity/?lat=' + lat + '&limit=10&lon=' + lon + '&radius=25&q-activities_activity_type_name_eq=hiking', options
-        fetch(getTrailUrl)
+var trailApiCall = function(coordinates){
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': '3f7720283amsh832fcd99762aa5ep13ac18jsn2a3f879a1146',
+            'X-RapidAPI-Host': 'trailapi-trailapi.p.rapidapi.com'
+        }
+    };  
+    
+    var getTrailUrl = 'https://trailapi-trailapi.p.rapidapi.com/activity/?lat=' + coordinates.lat + '&limit=10&lon=' + coordinates.lon + '&radius=25&q-activities_activity_type_name_eq=hiking'
+        fetch(getTrailUrl, options)
     .then(response => response.json())
-    .then(response => console.log(response))
+    .then(response => {
+        console.log(response)
+        return response;
+    })
     .catch(err => console.error(err));
+
 
 }
 
