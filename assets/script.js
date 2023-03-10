@@ -31,10 +31,10 @@ var getWeather = function(city, state) {
 
             var windSpeed = data.wind.speed;
             console.log('Wind Speed',windSpeed);
-
+// Variable and Code to Print Weather to Screen
 var currentWeatherDiv = document.getElementById("current-weather");
 
-var weatherHTML = "<p> Todays Weather<br> " +weatherDescription+ "</p><br><img src='http://openweathermap.org/img/w/" + weatherIcon + ".png'><br><p>Humidity: " + currentHumidity + "</p><br><p>Temperature today <br>Low " + tempMin + "<br> High " + tempMax + "</p><br><p>Wind Speed: " + windSpeed + "</p>"
+var weatherHTML = "<p> Todays Weather<br> " +weatherDescription+ "</p><br><img src='http://openweathermap.org/img/w/" + weatherIcon + ".png'><br><p>Humidity: " + currentHumidity + "</p><br><p>Temperature Today <br>Low " + tempMin + "<br> High " + tempMax + "</p><br><p>Wind Speed: " + windSpeed + "</p>"
 currentWeatherDiv.innerHTML = weatherHTML;
 
 
