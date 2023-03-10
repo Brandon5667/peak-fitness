@@ -34,7 +34,20 @@ var getWeather = function(city, state) {
 // Variable and Code to Print Weather to Screen
 var currentWeatherDiv = document.getElementById("current-weather");
 
-var weatherHTML = "<p> Todays Weather<br> " +weatherDescription+ "</p><br><img src='http://openweathermap.org/img/w/" + weatherIcon + ".png'><br><p>Humidity: " + currentHumidity + "</p><br><p>Temperature Today <br>Low " + tempMin + "<br> High " + tempMax + "</p><br><p>Wind Speed: " + windSpeed + "</p>"
+
+var weatherHTML = "<ul>" +
+                  "<li>Todays Weather: " + weatherDescription + "</li>" +
+                  "<li><img src='http://openweathermap.org/img/w/" + weatherIcon + ".png'></li>" +
+                  "<li>Humidity: " + currentHumidity + "</li>" +
+                  "<li>Temperature Today:</li>" +
+                  "<ul>" +
+                  "<li>Low: " + tempMin + "</li>" +
+                  "<li>High: " + tempMax + "</li>" +
+                  "</ul>" +
+                  "<li>Wind Speed: " + windSpeed + "</li>" +
+                  "</ul>";
+
+
 currentWeatherDiv.innerHTML = weatherHTML;
 
 
