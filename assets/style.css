@@ -107,6 +107,10 @@ article {
     font-weight: bold;
 }
 
+#list-of-trails > li {
+    font-size:15px;
+}
+
 /* Styles for the h2 element within the article */
 h2 {
     font-weight: bold;
