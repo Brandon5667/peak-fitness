@@ -1,42 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- added cdn for css framework bulma, changed title to "Peak Fitness", and linked stylesheet -->
-    <title>Peak Fitness</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css" integrity="sha512-HqxHUkJM0SYcbvxUw5P60SzdOTy/QVwA1JJrvaXJv4q7lmbDZCmZaqz01UPOaQveoxfYRv1tHozWGPMcuTBuvQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="stylesheet" type="text/css" href="./assets/style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- added cdn for css framework bulma, changed title to "Peak Fitness", and linked stylesheet -->
+  <title>Peak Fitness</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css"
+    integrity="sha512-HqxHUkJM0SYcbvxUw5P60SzdOTy/QVwA1JJrvaXJv4q7lmbDZCmZaqz01UPOaQveoxfYRv1tHozWGPMcuTBuvQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" type="text/css" href="./assets/style.css">
 </head>
+
 <body>
-    <header>
-        <!-- created header for web banner and coded in form element to retrieve city 
+
+  <header>
+    <!-- created header for web banner and coded in form element to retrieve city 
         and created state drop down selector to input state. button created for user input. -->
-        <h1>
-            Peak Fitness
-        </h1>
-        <form id="form-el">
-            <input id="city-search" class="input is-large" type="text" placeholder="Enter Your City"> <br/>
+    <h1>
+      Peak Fitness
+    </h1>
+
+  </header>
+
+  <section>
+    <div class="container">
+      <div class="columns">
+
+        <div class="column">
+          <form id="form-el">
+            <input id="city-search" class="input is-large" type="text" placeholder="Enter Your City"> <br />
             <select id="state-search">
-                <option value="NC">NC</option>
-                <option value="VA">VA</option>
-                <option value="TN">TN</option>
-                <option value="SC">SC</option>
-                <option value="GA">GA</option>
+              <option value="NC">NC</option>
+              <option value="VA">VA</option>
+              <option value="TN">TN</option>
+              <option value="SC">SC</option>
+              <option value="GA">GA</option>
             </select>
             <button class="button is-small" id="submit-btn">SUBMIT</button>
-        </form>
-    </header>
-    <!-- container for trail list element created and container for current weather container -->
-	<article>
-        <ul id="list-of-trails">List of Local Hiking Trails</ul>
-        <h2>Today's Weather</h2>
-        <div id="current-weather"></div>
-    </article>
-    <!-- added jquery cdn and script tag -->
-    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-    <script src="./assets/script.js"></script>
+          </form>
+
+        </div>
+
+        <div class="column">
+          <!-- dropdown menu  -->
+          <div class="control">
+            <span class="dropdown-trigger">Search History</span>
+            <ul id="searchDropDown" class="box dropdown-items">
+              <!-- <li class="dropdown-item"><a href="">One First Selection</a></li> -->
+            </ul>
+          </div> <!-- End Dropdown Menu -->
+
+
+        </div> <!-- End of columns -->
+
+
+      </div>
+    </div>
+  </section>
+
+  <br>
+
+  <!-- container for trail list element created and container for current weather container -->
+  <section>
+    <div class="container">
+      <div class="columns">
+        <div class="column">
+          <h3>List of Local Hiking Trails</h3>
+          <ul id="list-of-trails">List of Local Hiking Trails</ul>
+        </div>
+
+        <div class="column todayWeatherColumn">
+          <h3 id="todayWeather">Today's Weather</h3>
+          <h6 id="today-city"></h6>
+          <p id="today-temp"></p>
+          <p id="today-wind" ></p>
+          <p id="today-humid" ></p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- added jquery cdn and script tag -->
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.3/dayjs.min.js"></script>
+  <script src="./assets/script.js"></script>
 
 </body>
+
 </html>

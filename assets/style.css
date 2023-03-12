@@ -116,3 +116,54 @@ h2 {
     font-weight: bold;
     font-size: 20px;
 }
+
+  /* Drop down menu  */
+  /******************/
+.dropdown-trigger {
+    border: 1px solid #eee;
+    border-color: black;
+    padding: .5em;  
+    background-color: white;
+  }
+  .dropdown-trigger:hover {
+    cursor:pointer;
+  }
+  .dropdown-trigger::after {
+    content: "\25BD"; 
+    color:#ccc; 
+    padding-left:1em;
+    vertical-align: middle;
+  }
+  .dropdown-items {
+    box-shadow: 1px 1px 5px #ccc;
+    display: none;
+    border-radius:1px;
+    left: 0;
+    position: absolute;
+    top: 2em;
+    z-index: 1000;
+    text-align: left;
+    line-height:1.5em;
+    padding: 0;
+  }
+  .dropdown-item {
+    padding:.5em 2em;
+  }
+  .dropdown-divider {
+    border: 1px solid #eee;
+  }
+  .dropdown-item:hover {
+    background-color:#eee;
+  }
+  .dropdown-items.is-open {
+    display: block;
+    min-width:10em;
+  }
+
+  h3 {
+    color: white;
+  }
+
+  .todayWeatherColumn {
+    color: white;
+  }
