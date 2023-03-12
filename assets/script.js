@@ -1,6 +1,8 @@
 // Variables for Weather API
 var city = $("#city-search");
 var state = $("#state-search");
+var $trailsList = $("#list-of-trails");
+var $currantWeather = $("#current-weather");
 console.log(city);
 
 // Weather API Function, Pulls Weather, and Longitude/Latitude Coordinates for the City and State Entered
@@ -21,21 +23,41 @@ var getWeather = function(city, state) {
             console.log(lat);
             console.log(lon);
 // Trail API uses the lat / lon variables to pull nearby Hiking Trails and their information
-            const options = {
-                method: 'GET',
-                headers: {
-                    'X-RapidAPI-Key': '3f7720283amsh832fcd99762aa5ep13ac18jsn2a3f879a1146',
-                    'X-RapidAPI-Host': 'trailapi-trailapi.p.rapidapi.com'
-                }
-            };
-            
-            fetch('https://trailapi-trailapi.p.rapidapi.com/activity/?lat=' + lat + '&limit=10&lon=' + lon + '&radius=25&q-activities_activity_type_name_eq=hiking', options)
-                .then(response => response.json())
-                .then(response => console.log(response))
-                .catch(err => console.error(err));
-            
+            getGetTrailList(lat, lon);
+                
+                
         })
+        
 };
+
+var getGetTrailList = function(lat, lon){
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': '3f7720283amsh832fcd99762aa5ep13ac18jsn2a3f879a1146',
+            'X-RapidAPI-Host': 'trailapi-trailapi.p.rapidapi.com'
+        }
+    };
+    
+    fetch('https://trailapi-trailapi.p.rapidapi.com/trails/explore/?lat='+lat+'&lon='+lon+'&per_page=3', options)
+    .then (function(response){
+        console.log('got trails');
+        return response.json();
+    })
+    .then (function(data){
+        console.log('trails', data);
+        var trailData = data.data
+        
+        // for (const property in data) {
+        // console.log(property, data[property]);
+        // }
+        
+        
+        createTrailsList(trailData);
+
+    });
+}
+
 // Event Listner for Submit Button, to pull city and state from Input field to start all associated Functions
 var buttonEl = $("#submit-btn");
 buttonEl.on("click", function(event){
@@ -43,4 +65,25 @@ buttonEl.on("click", function(event){
     getWeather(city, state);
 });
 
+var createTrailsList = function(data){
+    console.log("create trails list daTA", data)
 
+    for (i=0; i<data.length; i++){
+        
+        const cardTemplate = `
+                <li>
+                <div class="card">
+                <div>${data[i].name}</div>
+                <div>${data[i].description}</div>
+                <div>${data[i].city}</div>
+                </div>
+                </li>
+    
+        `
+        
+        $trailsList.append(cardTemplate);
+        
+    }
+    // $trailsList.append("<li>"+ trailCity +", "+ description +", "+ name +"</li>");
+    console.log("Made a trail");
+}
