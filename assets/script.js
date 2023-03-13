@@ -7,7 +7,7 @@ var state = $("#state-search");
 var $trailsList = $("#list-of-trails");
 var $currantWeather = $("#current-weather");
 
-// MW Variables for search history
+// Variables for search history
 const degreeFahrenheit = "°F";
 let citySearchHistory = [];
 let previousCitySearch = "";
@@ -74,7 +74,7 @@ var getGetTrailList = function (lat, lon) {
         });
 }
 
-// MW
+
 function handleWeatherData(weatherData) {
     // $("#today-city").text(weatherData.name);
     $("#weather-icon").html(`<img src="https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png"></img>`);
@@ -123,7 +123,7 @@ var createTrailsList = function (data) {
     // console.log("Made a trail");
 }
 
-// MW Save to local storage 
+// Save to local storage 
 function saveLocalStorage(cityName, stateName) {
 
     cityAndState = cityName + "," + stateName;
@@ -145,7 +145,7 @@ function saveLocalStorage(cityName, stateName) {
     loadLocalStorage();
 };
 
-//MW
+
 function loadLocalStorage() {
     citySearchHistory = JSON.parse(localStorage.getItem("weatherSearchHistory"));
     previousCitySearch = JSON.parse(localStorage.getItem("lastCitySearched"));
@@ -169,7 +169,7 @@ function loadLocalStorage() {
     }
 };
 
-//MW
+
 loadLocalStorage();
 
 
@@ -187,7 +187,7 @@ if (previousCitySearch != "") {
 
 
 
-// MW  Drop down menu
+// Drop down menu
 var trigger = document.querySelector(".dropdown-trigger");
 
 trigger.addEventListener("click", function (event) {
