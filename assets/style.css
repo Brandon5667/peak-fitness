@@ -2,11 +2,11 @@
 
 /* Body styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #963333;
-    height: 100vh;
+    background-color: #719EF0;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
@@ -14,7 +14,7 @@ body {
 /* Header styles */
 header {
     background-image: url("images/mntns.jpg");
-    background-color: #963333;
+    /* background-color: #80400B; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -50,7 +50,8 @@ form#form-el {
 
 /* Styles for the submit button within the form */
 #submit-btn{
-    margin-right: 45%;
+    
+    
 }
 
 /* Styles for the city search input within the form */
@@ -71,14 +72,14 @@ form#form-el label {
 form#form-el input[type="text"] {
     margin-left: 50px;
     padding: 5px;
-    font-size: 20px;
+    font-size: 12px;
     flex-basis: 65%;
 }
 
 /* Styles for the submit button within the form */
 form#form-el input[type="submit"] {
     padding: 5px 20px;
-    font-size: 20px;
+    font-size: 12px;
     background-color: #333;
     color: #fff;
     border: none;
@@ -88,27 +89,50 @@ form#form-el input[type="submit"] {
 
 /* Article styles */
 article {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    /* align-items: center; */
-    margin: 1%;
-    padding: 2%;
-    background-color: #c4c4c4;
-    border-radius: 10px;
-    flex-basis: 75%;
+  margin-left: -3%;
+  
+
+}
+
+#weather-box {
+  color: black;
+  background-color: #6D88A7;
+  border-radius: 4%;
+  margin-left: 10%;
+  margin-bottom: 2%;
 }
 
 /* Styles for the unordered list within the article element */
 #list-of-trails {
+    border: 1px solid white;
     margin-top: 0px;
     list-style: none;
     padding-left: 0;
     font-size: 20px;
     font-weight: bold;
+
+}
+
+#trail-data{
+  color: black;
+  background-color: #fff;
+  margin-left: 1%;
+  border-radius: 4%;
+}
+
+.card{
+  padding: 1%;
+  color: black;
+  background-color: #6D88A7;
+}
+
+#submit-btn{
+  margin-left: 1%;
 }
 
 #list-of-trails > li {
-    font-size:15px;
+    font-size:10px;
+    margin-bottom: 2%;
 }
 
 /* Styles for the h2 element within the article */
@@ -124,6 +148,7 @@ h2 {
     border-color: black;
     padding: .5em;  
     background-color: white;
+    border-radius: 4px;
   }
   .dropdown-trigger:hover {
     cursor:pointer;
@@ -161,9 +186,14 @@ h2 {
   }
 
   h3 {
-    color: white;
+    font-weight: bold;
   }
 
   .todayWeatherColumn {
     color: white;
+  }
+
+  h1{
+    font-family: Righteous;
+
   }

@@ -15,7 +15,7 @@ let previousCitySearch = "";
 
 // Weather API Function, Pulls Weather, and Longitude/Latitude Coordinates for the City and State Entered
 var getWeather = function (cityValue, stateValue) {
-    var openWeatherUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityValue + ',' + stateValue + ',USA&appid=263899f28c1a4fdfb9c42daf32e3c285';
+    var openWeatherUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + cityValue + ',' + stateValue + ',USA&appid=263899f28c1a4fdfb9c42daf32e3c285&units=imperial';
 
     // console.log('get current weather');
     fetch(openWeatherUrl)
@@ -77,7 +77,8 @@ var getGetTrailList = function (lat, lon) {
 // MW
 function handleWeatherData(weatherData) {
     // $("#today-city").text(weatherData.name);
-    $("#today-city").text(weatherData.name + " (" + dayjs(weatherData.dt * 1000).format("MM/DD/YYYY") + ") ").append(`<img src="https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png"></img>`);
+    $("#weather-icon").html(`<img src="https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png"></img>`);
+    $("#today-city").text(weatherData.name + " (" + dayjs(weatherData.dt * 1000).format("MM/DD/YYYY") + ") ");
     $("#today-temp").text("Temperature: " + weatherData.main.temp.toFixed(1) + ` ` + degreeFahrenheit);
     $("#today-wind").text("Wind Speed: " + weatherData.wind.speed.toFixed(1) + " MPH");
     $("#today-humid").text("Humidity: " + weatherData.main.humidity + "%");
@@ -89,7 +90,7 @@ function handleWeatherData(weatherData) {
 var buttonEl = $("#submit-btn");
 buttonEl.on("click", function (event) {
     event.preventDefault();
-
+    console.log("start")
     var cityValue = citySearchForm.val();
     var stateValue = state.val();
 
