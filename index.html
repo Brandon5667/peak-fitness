@@ -25,7 +25,7 @@
     </h1>
     <div class="container">
         <div class="columns">
-          <div class="column">
+          <div class="column is-flex">
             <form id="form-el">
               <input id="city-search" class="input is-large" type="text" placeholder="Enter Your City"> <br />
               <select id="state-search">
@@ -66,14 +66,14 @@
   <!-- container for trail list element created and container for current weather container -->
   <!-- MW split trails and weather into two Bulma columns  -->
   <article>
-    <div class="container">
+    <div class="container is-fluid">
       <div class="columns">
         <div id="trail-data" class="column">
           <h3>List of Local Hiking Trails</h3>
           <ul id="list-of-trails"></ul>
         </div>
 
-        <div id="weather-box" class="column todayWeatherColumn">
+        <div id="weather-box" class="column is-fluid todayWeatherColumn">
           <h3 id="todayWeather">Today's Weather</h3>
           <p id="weather-icon"></p>
           <h6 id="today-city"></h6>
