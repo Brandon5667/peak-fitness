@@ -88,10 +88,10 @@ form#form-el input[type="submit"] {
 }
 
 /* Article styles */
-/* article {
-  margin-left: -3%;
+article {
+  margin-left: -1%;
 
-} */
+}
 
 #weather-box {
   color: black;
@@ -148,7 +148,7 @@ h2 {
     padding: .5em;  
     background-color: white;
     border-radius: 4px;
-    margin-left: 1.5%;
+    margin-left: 0.35%;
   }
   .dropdown-trigger:hover {
     cursor:pointer;
