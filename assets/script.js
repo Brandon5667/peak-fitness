@@ -54,7 +54,8 @@ var getGetTrailList = function (lat, lon) {
 
 // Function to print Weather Data to the Screen
 function handleWeatherData(weatherData) {
-    $("#today-city").text(weatherData.name + " (" + dayjs(weatherData.dt * 1000).format("MM/DD/YYYY") + ") ").append(`<img src="https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png"></img>`);
+    $("#weather-icon").html(`<img src="https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png"></img>`);
+    $("#today-city").text(weatherData.name + " (" + dayjs(weatherData.dt * 1000).format("MM/DD/YYYY") + ") ");
     $("#today-temp").text("Temperature: " + weatherData.main.temp.toFixed(1) + ` ` + degreeFahrenheit);
     $("#today-wind").text("Wind Speed: " + weatherData.wind.speed.toFixed(1) + " MPH");
     $("#today-humid").text("Humidity: " + weatherData.main.humidity + "%");
