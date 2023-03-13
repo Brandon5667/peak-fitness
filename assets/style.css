@@ -2,17 +2,18 @@
 
 /* Body styles */
 body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #719EF0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #719EF0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Header styles */
 header {
+
     background-image: url("images/m1.jpg");
     /* background-color: #80400B; */
     display: flex;
@@ -28,69 +29,66 @@ header {
     flex-basis: 25%;
     border-radius: 10px;
     margin: 1%;
+
 }
 
 /* Styles for the h1 element within the header */
 header h1 {
-    margin: 0;
-    font-size: 36px;
-    flex-basis: 50%;
+  margin: 0;
+  font-size: 36px;
+  flex-basis: 50%;
 }
 
 /* Form styles */
 form#form-el {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
-    margin-right: 20px;
-    text-align: center;
-    flex-basis: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  margin-right: 20px;
+  text-align: center;
+  flex-basis: 50%;
 }
 
 /* Styles for the submit button within the form */
-#submit-btn{
-    
-    
-}
+#submit-btn {}
 
 /* Styles for the city search input within the form */
-#city-search{
-    /* margin-left: 1px; */
-    min-width: 150px;
-    max-width: 300px;
-    margin-right: 1%;
+#city-search {
+  /* margin-left: 1px; */
+  min-width: 150px;
+  max-width: 300px;
+  margin-right: 1%;
 }
 
 /* Styles for the label element within the form */
 form#form-el label {
-    font-size: 20px;
-    flex-basis: 30%;
+  font-size: 20px;
+  flex-basis: 30%;
 }
 
 /* Styles for the text input within the form */
 form#form-el input[type="text"] {
-    margin-left: 50px;
-    padding: 5px;
-    font-size: 12px;
-    flex-basis: 65%;
+  margin-left: 50px;
+  padding: 5px;
+  font-size: 12px;
+  flex-basis: 65%;
 }
 
 /* Styles for the submit button within the form */
 form#form-el input[type="submit"] {
-    padding: 5px 20px;
-    font-size: 12px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    margin-left: 10px;
+  padding: 5px 20px;
+  font-size: 12px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
 }
 
 /* Article styles */
 article {
   margin-left: -1%;
-
 }
 
 #weather-box {
@@ -103,46 +101,47 @@ article {
 
 /* Styles for the unordered list within the article element */
 #list-of-trails {
-    border: 1px solid white;
-    margin-top: 0px;
-    list-style: none;
-    padding-left: 0;
-    font-size: 20px;
-    font-weight: bold;
+  border: 1px solid white;
+  margin-top: 0px;
+  list-style: none;
+  padding-left: 0;
+  font-size: 20px;
+  font-weight: bold;
 
 }
 
-#trail-data{
+#trail-data {
   color: black;
   background-color: #fff;
   margin-left: 1%;
   border-radius: 4%;
 }
 
-.card{
+.card {
   padding: 1%;
   color: black;
   background-color: #6D88A7;
 }
 
-#submit-btn{
+#submit-btn {
   margin-left: 1%;
 }
 
-#list-of-trails > li {
-    font-size:10px;
-    margin-bottom: 2%;
+#list-of-trails>li {
+  font-size: 10px;
+  margin-bottom: 2%;
 }
 
 /* Styles for the h2 element within the article */
 h2 {
-    font-weight: bold;
-    font-size: 20px;
+  font-weight: bold;
+  font-size: 20px;
 }
 
-  /* MW Bulma Drop down menu  */
-  /******************/
+/* MW Bulma Drop down menu  */
+/******************/
 .dropdown-trigger {
+
     border: 1px solid #eee;
     border-color: black;
     padding: .5em;  
@@ -201,3 +200,4 @@ h2 {
 
   }
   
+
