@@ -4,10 +4,11 @@ var state = $("#state-search");
 var $trailsList = $("#list-of-trails");
 var $currantWeather = $("#current-weather");
 
-//Variables for Search History and Weather Ouput
+// Variables for Previous Search History and Temperature
 const degreeFahrenheit = "°F";
 let citySearchHistory = [];
 let previousCitySearch = "";
+
 
 // Weather API Function, Pulls Weather, and Longitude/Latitude Coordinates for the City and State Entered
 var getWeather = function (cityValue, stateValue) {
@@ -17,17 +18,21 @@ var getWeather = function (cityValue, stateValue) {
             return response.json();
         })
         .then(function (data) {
+// Variables lat / lon pull Longitude and Latitude from the Weather API data set
             var lat = data.coord.lat;
             var lon = data.coord.lon;
             handleWeatherData(data);
+
+// Trail API uses the lat / lon variables to pull nearby Hiking Trails and their information
             getGetTrailList(lat, lon);
 
 //Save City and State to local storage
             saveLocalStorage(cityValue, stateValue);
+
         })
 };
 
-// Trail List API Retrieval
+// Variable to Get Trail list and information
 var getGetTrailList = function (lat, lon) {
     const options = {
         method: 'GET',
@@ -38,22 +43,22 @@ var getGetTrailList = function (lat, lon) {
     };
 
     fetch('https://trailapi-trailapi.p.rapidapi.com/trails/explore/?lat=' + lat + '&lon=' + lon + '&per_page=3', options)
-        .then(function (response) {           
+        .then(function (response) {
             return response.json();
         })
         .then(function (data) {
             var trailData = data.data
             createTrailsList(trailData);
         });
-};
+}
 
-// Function to Print Weather Data to Users Screen
+// Function to print Weather Data to the Screen
 function handleWeatherData(weatherData) {
     $("#today-city").text(weatherData.name + " (" + dayjs(weatherData.dt * 1000).format("MM/DD/YYYY") + ") ").append(`<img src="https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png"></img>`);
     $("#today-temp").text("Temperature: " + weatherData.main.temp.toFixed(1) + ` ` + degreeFahrenheit);
     $("#today-wind").text("Wind Speed: " + weatherData.wind.speed.toFixed(1) + " MPH");
     $("#today-humid").text("Humidity: " + weatherData.main.humidity + "%");
-};
+}
 
 // Event Listner for Submit Button, to pull city and state from Input field to start all associated Functions
 var buttonEl = $("#submit-btn");
@@ -63,13 +68,10 @@ buttonEl.on("click", function (event) {
     var stateValue = state.val();
     getWeather(cityValue, stateValue);
 });
-
-
-// Variable to Print Trail list to Users Screen
-var createTrailsList = function (data) {
+// Creation and Clearing of Trail List
+var createTrailsList = function (data) {   
     $trailsList.html("");
     for (i = 0; i < data.length; i++) {
-
         const cardTemplate = `
                 <li>
                 <div class="card">
@@ -78,31 +80,34 @@ var createTrailsList = function (data) {
                 <div>${data[i].city}</div>
                 </div>
                 </li>`
-         $trailsList.append(cardTemplate);
-        }
-    };
+        $trailsList.append(cardTemplate);
+    }
+}
 
-// Function to Store Recent Searches to Local Storage
+// Function to Save Search to Local Storage
 function saveLocalStorage(cityName, stateName) {
     cityAndState = cityName + "," + stateName;
     previousCitySearch = cityAndState
     if (!citySearchHistory.includes(cityAndState)) {
         citySearchHistory.push(cityAndState);
     }
-                localStorage.setItem("weatherSearchHistory", JSON.stringify(citySearchHistory));
-                localStorage.setItem("lastCitySearched", JSON.stringify(previousCitySearch));
+    localStorage.setItem("weatherSearchHistory", JSON.stringify(citySearchHistory));
+    localStorage.setItem("lastCitySearched", JSON.stringify(previousCitySearch));
     loadLocalStorage();
 };
-//Loads Local Storage of Recent Searches
+
+//Function to Load Local Storage
 function loadLocalStorage() {
     citySearchHistory = JSON.parse(localStorage.getItem("weatherSearchHistory"));
     previousCitySearch = JSON.parse(localStorage.getItem("lastCitySearched"));
     if (!citySearchHistory) {
         citySearchHistory = [];
     }
+
     if (!previousCitySearch) {
         previousCitySearch = "";
     }
+
 //Empty to remove duplicates 
     $("#searchDropDown").empty();
     for (i = 0; i < citySearchHistory.length; i++) {
@@ -110,28 +115,29 @@ function loadLocalStorage() {
     }
 };
 
-//Loads Local Storage Upon program load
+//Local Storage Loading Code
 loadLocalStorage();
 if (previousCitySearch != "") {
     var selectedCity = "";
     var selectedState = "";
     var array = previousCitySearch.split(",");
-
     selectedCity = array[0];
     selectedState = array[1];
-
     getWeather(selectedCity, selectedState);
 }
-// Drop Down Menu for Previous Searches
+
+// Drop Down Menu for Previous Search
 var trigger = document.querySelector(".dropdown-trigger");
 trigger.addEventListener("click", function (event) {
     document.querySelector(".dropdown-items").classList.toggle("is-open");
 });
+
 $("#searchDropDown").on("click", function (event) {
     let selectedOption = $(event.target).closest("a").attr("id");
     var array = selectedOption.split(",");
     selectedCity = array[0];
     selectedState = array[1];
-    citySearchForm.text("");   
+    citySearchForm.text("");
     getWeather(selectedCity, selectedState);
 });
+
