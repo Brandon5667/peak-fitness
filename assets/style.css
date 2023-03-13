@@ -13,21 +13,23 @@ body {
 
 /* Header styles */
 header {
-  background-image: url("images/mntns.jpg");
-  /* background-color: #80400B; */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: #fff;
-  margin-top: 10px;
-  padding: 2%;
-  text-align: center;
-  flex-basis: 25%;
-  border-radius: 10px;
-  margin: 1%;
+
+    background-image: url("images/m1.jpg");
+    /* background-color: #80400B; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    color: #fff;
+    margin-top: 10px;
+    padding: 2%;
+    text-align: center;
+    flex-basis: 25%;
+    border-radius: 10px;
+    margin: 1%;
+
 }
 
 /* Styles for the h1 element within the header */
@@ -86,9 +88,7 @@ form#form-el input[type="submit"] {
 
 /* Article styles */
 article {
-  margin-left: -3%;
-
-
+  margin-left: -1%;
 }
 
 #weather-box {
@@ -141,63 +141,63 @@ h2 {
 /* MW Bulma Drop down menu  */
 /******************/
 .dropdown-trigger {
-  border: 1px solid #eee;
-  border-color: black;
-  padding: .5em;
-  background-color: white;
-  border-radius: 4px;
-}
 
-.dropdown-trigger:hover {
-  cursor: pointer;
-}
+    border: 1px solid #eee;
+    border-color: black;
+    padding: .5em;  
+    background-color: white;
+    border-radius: 4px;
+    margin-left: 0.35%;
+  }
+  .dropdown-trigger:hover {
+    cursor:pointer;
+  }
+  .dropdown-trigger::after {
+    content: "\25BD"; 
+    color:#ccc; 
+    padding-left:1em;
+    vertical-align: middle;
+  }
+  .dropdown-items {
+    box-shadow: 1px 1px 5px #ccc;
+    display: none;
+    border-radius:1px;
+    left: 0;
+    position: absolute;
+    top: 2em;
+    z-index: 1000;
+    text-align: left;
+    line-height:1.5em;
+    padding: 0;
+  }
+  .dropdown-item {
+    padding:.5em 2em;
+  }
+  .dropdown-divider {
+    border: 1px solid #eee;
+  }
+  .dropdown-item:hover {
+    background-color:#eee;
+  }
+  .dropdown-items.is-open {
+    display: block;
+    min-width:10em;
+  }
 
-.dropdown-trigger::after {
-  content: "\25BD";
-  color: #ccc;
-  padding-left: 1em;
-  vertical-align: middle;
-}
+  h3 {
+    font-weight: bold;
+  }
 
-.dropdown-items {
-  box-shadow: 1px 1px 5px #ccc;
-  display: none;
-  border-radius: 1px;
-  left: 0;
-  position: absolute;
-  top: 2em;
-  z-index: 1000;
-  text-align: left;
-  line-height: 1.5em;
-  padding: 0;
-}
+  .todayWeatherColumn {
+    
+    text-align: center;
+    font-weight: 500;
+    font-size: larger;
+  }
 
-.dropdown-item {
-  padding: .5em 2em;
-}
+  h1{
+    font-family: Righteous;
 
-.dropdown-divider {
-  border: 1px solid #eee;
-}
+  }
+  
 
-.dropdown-item:hover {
-  background-color: #eee;
-}
-
-.dropdown-items.is-open {
-  display: block;
-  min-width: 10em;
-}
-
-h3 {
-  font-weight: bold;
-}
-
-.todayWeatherColumn {
-  color: white;
-}
-
-h1 {
-  font-family: Righteous;
-
-}
