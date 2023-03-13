@@ -13,7 +13,7 @@ body {
 
 /* Header styles */
 header {
-    background-image: url("images/mntns.jpg");
+    background-image: url("images/m1.jpg");
     /* background-color: #80400B; */
     display: flex;
     justify-content: space-between;
@@ -89,8 +89,7 @@ form#form-el input[type="submit"] {
 
 /* Article styles */
 article {
-  margin-left: -3%;
-  
+  margin-left: -1%;
 
 }
 
@@ -149,6 +148,7 @@ h2 {
     padding: .5em;  
     background-color: white;
     border-radius: 4px;
+    margin-left: 0.35%;
   }
   .dropdown-trigger:hover {
     cursor:pointer;
@@ -190,10 +190,14 @@ h2 {
   }
 
   .todayWeatherColumn {
-    color: white;
+    
+    text-align: center;
+    font-weight: 500;
+    font-size: larger;
   }
 
   h1{
     font-family: Righteous;
 
   }
+  
