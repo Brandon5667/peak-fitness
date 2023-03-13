@@ -203,7 +203,7 @@ $("#searchDropDown").on("click", function (event) {
     selectedState = array[1];
 
     citySearchForm.text("");
-    
+
 
     getWeather(selectedCity, selectedState);
 });
