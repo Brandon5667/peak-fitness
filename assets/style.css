@@ -15,7 +15,6 @@ body {
 header {
 
     background-image: url("images/m1.jpg");
-    /* background-color: #80400B; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -50,12 +49,8 @@ form#form-el {
   flex-basis: 50%;
 }
 
-/* Styles for the submit button within the form */
-#submit-btn {}
-
 /* Styles for the city search input within the form */
 #city-search {
-  /* margin-left: 1px; */
   min-width: 150px;
   max-width: 300px;
   margin-right: 1%;
@@ -95,8 +90,9 @@ article {
   color: black;
   background-color: #6D88A7;
   border-radius: 4%;
-  margin-left: 10%;
+  margin-left: 1%;
   margin-bottom: 2%;
+  min-width: 20%; 
 }
 
 /* Styles for the unordered list within the article element */
@@ -107,7 +103,6 @@ article {
   padding-left: 0;
   font-size: 20px;
   font-weight: bold;
-
 }
 
 #trail-data {
@@ -115,6 +110,8 @@ article {
   background-color: #fff;
   margin-left: 1%;
   border-radius: 4%;
+  margin-bottom: 2%;
+  min-width: 20%;
 }
 
 .card {
@@ -138,8 +135,8 @@ h2 {
   font-size: 20px;
 }
 
-/* MW Bulma Drop down menu  */
-/******************/
+/*Bulma Drop down menu  */
+
 .dropdown-trigger {
 
     border: 1px solid #eee;
@@ -188,8 +185,7 @@ h2 {
     font-weight: bold;
   }
 
-  .todayWeatherColumn {
-    
+  .todayWeatherColumn {   
     text-align: center;
     font-weight: 500;
     font-size: larger;
@@ -200,4 +196,10 @@ h2 {
 
   }
   
-
+  footer{
+    margin-top: 5%;
+    background-color: #719EF0;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+  }
