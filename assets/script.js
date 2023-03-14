@@ -1,11 +1,8 @@
-// Clear Local Storage
-// localStorage.clear();
-
 // Variables for Weather API
 var citySearchForm = $("#city-search");
 var state = $("#state-search");
 var $trailsList = $("#list-of-trails");
-var $currantWeather = $("#current-weather");
+
 
 // Variables for search history
 const degreeFahrenheit = "°F";
@@ -25,25 +22,19 @@ var getWeather = function (cityValue, stateValue) {
         })
         .then(function (data) {
             // console.log('Weather', data);
-            // Variables lat / lon pull Longitude and Latitude from the Weather API data set
+// Variables lat / lon pull Longitude and Latitude from the Weather API data set
             var lat = data.coord.lat;
             var lon = data.coord.lon;
             // console.log(data);
             // console.log(lat);
             // console.log(lon);
             handleWeatherData(data);
-            // Trail API uses the lat / lon variables to pull nearby Hiking Trails and their information
+// Trail API uses the lat / lon variables to pull nearby Hiking Trails and their information
             getGetTrailList(lat, lon);
 
-
-
-            //Save City and State to local storage
+//Save City and State to local storage
             saveLocalStorage(cityValue, stateValue);
-
         })
-
-
-
 };
 
 var getGetTrailList = function (lat, lon) {
@@ -63,28 +54,17 @@ var getGetTrailList = function (lat, lon) {
         .then(function (data) {
             // console.log('trails', data);
             var trailData = data.data
-
-            // for (const property in data) {
-            // console.log(property, data[property]);
-            // }
-
-
             createTrailsList(trailData);
-
         });
 }
 
-
 function handleWeatherData(weatherData) {
-    // $("#today-city").text(weatherData.name);
     $("#weather-icon").html(`<img src="https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png"></img>`);
     $("#today-city").text(weatherData.name + " (" + dayjs(weatherData.dt * 1000).format("MM/DD/YYYY") + ") ");
     $("#today-temp").text("Temperature: " + weatherData.main.temp.toFixed(1) + ` ` + degreeFahrenheit);
     $("#today-wind").text("Wind Speed: " + weatherData.wind.speed.toFixed(1) + " MPH");
     $("#today-humid").text("Humidity: " + weatherData.main.humidity + "%");
 }
-
-
 
 // Event Listner for Submit Button, to pull city and state from Input field to start all associated Functions
 var buttonEl = $("#submit-btn");
@@ -93,18 +73,15 @@ buttonEl.on("click", function (event) {
     console.log("start")
     var cityValue = citySearchForm.val();
     var stateValue = state.val();
-
-
     getWeather(cityValue, stateValue);
 });
 
 var createTrailsList = function (data) {
     // console.log("create trails list daTA", data)
 
-    // clear previos trail list
+// Clear previous trail list
     $trailsList.html("");
     for (i = 0; i < data.length; i++) {
-
         const cardTemplate = `
                 <li>
                 <div class="card">
@@ -112,98 +89,65 @@ var createTrailsList = function (data) {
                 <div>${data[i].description}</div>
                 <div>${data[i].city}</div>
                 </div>
-                </li>
-    
-        `
-
+                </li>`
         $trailsList.append(cardTemplate);
-
     }
-    // $trailsList.append("<li>"+ trailCity +", "+ description +", "+ name +"</li>");
     // console.log("Made a trail");
 }
 
 // Save to local storage 
 function saveLocalStorage(cityName, stateName) {
-
     cityAndState = cityName + "," + stateName;
-
     previousCitySearch = cityAndState
 
     if (!citySearchHistory.includes(cityAndState)) {
         citySearchHistory.push(cityAndState);
-        // $("#search-history").append("<a href='#' class='list-group-item list-group-item-action' id='" + cityData + "'>" + cityData + "</a>")
-
-        // $(".dropdown-menu").append("<a href='#' class='dropdown-item' id='" + cityName + "'>" + cityName + "</a>");
-
     }
 
     localStorage.setItem("weatherSearchHistory", JSON.stringify(citySearchHistory));
-
     localStorage.setItem("lastCitySearched", JSON.stringify(previousCitySearch));
-
     loadLocalStorage();
 };
-
 
 function loadLocalStorage() {
     citySearchHistory = JSON.parse(localStorage.getItem("weatherSearchHistory"));
     previousCitySearch = JSON.parse(localStorage.getItem("lastCitySearched"));
 
-
     if (!citySearchHistory) {
         citySearchHistory = [];
     }
-
     if (!previousCitySearch) {
         previousCitySearch = "";
     }
 
-    //Empty to remove duplicates 
+//Empty to remove duplicates 
     $("#searchDropDown").empty();
-
     for (i = 0; i < citySearchHistory.length; i++) {
-
         $("#searchDropDown").append("<li class='dropdown-item'><a href='#' id='" + citySearchHistory[i] + "'>" + citySearchHistory[i] + "</a> </li>");
-
     }
 };
 
-
 loadLocalStorage();
-
-
 if (previousCitySearch != "") {
     var selectedCity = "";
     var selectedState = "";
     var array = previousCitySearch.split(",");
-
     selectedCity = array[0];
     selectedState = array[1];
-
     getWeather(selectedCity, selectedState);
 }
 
-
-
-
 // Drop down menu
 var trigger = document.querySelector(".dropdown-trigger");
-
 trigger.addEventListener("click", function (event) {
     document.querySelector(".dropdown-items").classList.toggle("is-open");
 });
 
 $("#searchDropDown").on("click", function (event) {
     let selectedOption = $(event.target).closest("a").attr("id");
-
     var array = selectedOption.split(",");
-
     selectedCity = array[0];
     selectedState = array[1];
-
     citySearchForm.text("");
-
-
     getWeather(selectedCity, selectedState);
 });
