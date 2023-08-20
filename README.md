@@ -68,6 +68,7 @@ The following image series demonstrates the appearance and functionality of the 
 ## Technologies Used
 
 * [VS Code](https://code.visualstudio.com/)
+* [HTML](https://www.w3schools.com/html/)
 * [JavaScript](https://www.w3schools.com/js/)
 * [JQuery](https://jquery.com/)
 * [Bulma CSS Framework](https://bulma.io/)
