@@ -12,7 +12,7 @@
 
 ### *The Task*
 
-For Project #1 of the *Coding Full Stack Boot Camp*, we were tasked to work in a group to build a web application from scratch that solves a real-world problem.
+For Project #1 of the *Coding Full Stack Boot Camp*, we were tasked to work in a group to build a front-end web application from scratch that solves a real-world problem.
 
 ### *Our Project*
 
