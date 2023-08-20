@@ -1,19 +1,35 @@
 # Peak Fitness 
 
-## Link to Deployed Webpage 
-To view the "Peak Fitness" web application, please visit the following link: https://brandon5667.github.io/peak-fitness/
 
+## Application Links
 
-## The Task
+* GitHub Repository for Application: https://github.com/Brandon5667/peak-fitness
 
-For Project #1, we were tasked to work in a group to build a web application from scratch that solves a real-world problem.
+* Deployed Application: https://brandon5667.github.io/peak-fitness/
 
 
 ## Description
 
+### *The Task*
+
+For Project #1 of the *Coding Full Stack Boot Camp*, we were tasked to work in a group to build a web application from scratch that solves a real-world problem.
+
+### *Our Project*
+
 To meet project requirements, our group created a web application called "Peak Fitness" that provides a tool for users to search bike trails and current weather conditions for a particular location. 
 
-Peak Fitness uses a combination of HTML, Bulma CSS framework, JavaScript, and JQuery to render up-to-date data retrieved from two server-side APIs. Featured in our web application, we used OpenWeather API to display weather data and TrailAPI to display a list of trails.
+Peak Fitness uses a combination of HTML, Bulma CSS framework, JavaScript, and JQuery to render up-to-date data retrieved from two server-side APIs and using client-side storage to store persistent data. Featured in our web application, we used OpenWeather API to display weather data and TrailAPI to display a list of trails.
+
+
+## Table of Contents 
+
+- [User Story](#user-story)
+- [Acceptance Criteria](#acceptance-criteria)
+- [Usage](#usage)
+- [Technologies Used](#technologies-used)
+- [Developing Contributors](#developing-contributors)
+- [License](#license)
+- [Badges](#badges)
 
 
 ## User Story
@@ -36,7 +52,7 @@ THEN I am presented with a list of trails and current weather conditions for the
 ```
 
 
-## Mock-Up
+## Usage
 
 The following image series demonstrates the appearance and functionality of the "Peak Fitness" web application:
 
@@ -49,7 +65,15 @@ The following image series demonstrates the appearance and functionality of the 
 ![An image of the 'search history' dropdown menu featured on Peak Fitness web application.](./assets/images/HistorySearch.jpg)
 
 
-## Credits
+## Technologies Used
+
+* [VS Code](https://code.visualstudio.com/)
+* [JavaScript](https://www.w3schools.com/js/)
+* [JQuery](https://jquery.com/)
+* [Bulma CSS Framework](https://bulma.io/)
+* [GitHub Pages](https://pages.github.com/)
+
+### *Server-Side APIs*
 
 * OpenWeather API: https://openweathermap.org/forecast5
 
@@ -59,3 +83,13 @@ The following image series demonstrates the appearance and functionality of the 
 ## Developing Contributors
 
 Hayden Caffey, Brandon Cullifer, Chevar Reid, Adam Johnson, and MacKenzie Wentworth
+
+
+## License
+This project is covered under the [MIT License](./LICENSE). For more details, please click the license icon below under 'Badges'.
+
+---
+
+## Badges
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
